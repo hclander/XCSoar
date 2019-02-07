@@ -47,6 +47,13 @@ UpdateInfoBoxFreeRAM(InfoBoxData &data);
 void
 UpdateInfoBoxNbrSat(InfoBoxData &data);
 
+void
+UpdateInfoBoxCounter(InfoBoxData &data);
+
+void
+UpdateInfoBoxRandom(InfoBoxData &data);
+
+
 class InfoBoxContentHorizon : public InfoBoxContent
 {
 public:

@@ -164,6 +164,9 @@ namespace InfoBoxFactory
 
     e_NbrSat, /* Number of used Sat by GPS module */
 
+    e_Counter, /* Test counter */
+    e_Random,  /* Test Random */
+
     e_NUM_TYPES /* Last item */
   };
 

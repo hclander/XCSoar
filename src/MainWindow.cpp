@@ -224,6 +224,7 @@ MainWindow::InitialiseConfigured()
                              ib_layout.control_size.cx);
 
   InfoBoxManager::Create(*this, ib_layout, look->info_box);
+  // TODO: Revisar esto.
   map_rect = ib_layout.remaining;
 
   ButtonLabel::CreateButtonLabels(*this, look->dialog.button);
@@ -246,6 +247,11 @@ MainWindow::InitialiseConfigured()
   }
 #endif
 
+/* 
+ * Desactivado a ver que pasa si no tiene mapa
+ *
+ */
+ 
   map = new GlueMapWindow(*look);
   map->SetComputerSettings(CommonInterface::GetComputerSettings());
   map->SetMapSettings(CommonInterface::GetMapSettings());
@@ -342,6 +348,7 @@ MainWindow::ReinitialiseLayout()
 
   InfoBoxManager::Create(*this, ib_layout, look->info_box);
   InfoBoxManager::ProcessTimer();
+  //TODO:  Revisar
   map_rect = ib_layout.remaining;
 
   popup->UpdateLayout(rc);

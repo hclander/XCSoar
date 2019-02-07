@@ -32,6 +32,7 @@ Copyright_License {
 #include "Look/Look.hpp"
 
 #include <tchar.h>
+#include <stdlib.h>
 
 void
 UpdateInfoBoxGLoad(InfoBoxData &data)
@@ -200,4 +201,29 @@ UpdateInfoBoxNbrSat(InfoBoxData &data)
         // valid but unknown number of sats
         data.SetValueInvalid();
     }
+}
+
+void
+UpdateInfoBoxCounter(InfoBoxData &data)
+{
+    static int count = 0;
+
+    count = (count + 1)  % 10000;
+
+    data.UnsafeFormatValue(_T("%04d"), count);
+
+}
+
+void
+UpdateInfoBoxRandom(InfoBoxData &data)
+{
+   
+//   static int count = 10000;
+
+//   count = count == 0 ? 9999 : count -1 ;
+
+//   data.UnsafeFormatValue(_T("%04d"), count);
+
+     data.UnsafeFormatValue(_T("%04d"),(rand() % 10000));
+   
 }

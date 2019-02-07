@@ -72,6 +72,7 @@ Copyright_License {
 #include "IO/Async/GlobalAsioThread.hpp"
 #include "Net/HTTP/DownloadManager.hpp"
 #include "Hardware/DisplayDPI.hpp"
+#include "Hardware/DisplaySize.hpp"
 #include "Hardware/DisplayGlue.hpp"
 #include "Compiler.h"
 #include "NMEA/Aircraft.hpp"
@@ -108,6 +109,8 @@ Copyright_License {
 #else
 #include "DrawThread.hpp"
 #endif
+
+#include "OS/FileUtil.hpp"
 
 static TaskManager *task_manager;
 static GlideComputerEvents *glide_computer_events;
@@ -168,6 +171,29 @@ AfterStartup()
   ForceCalculation();
 }
 
+
+class LogFileVisitor: public File::Visitor
+{
+
+   public:
+	       
+	
+	LogFileVisitor()
+	{ 
+	}
+
+
+	void Visit(Path path, Path filename) override {
+
+		LogFormat("%s", filename.c_str());
+	}
+
+
+};
+
+
+
+
 /**
  * "Boots" up XCSoar
  * @param hInstance Instance handle
@@ -184,6 +210,15 @@ Startup()
 #endif
 
   LogFormat("Display dpi=%u,%u", Display::GetXDPI(), Display::GetYDPI());
+
+  LogFormat("/dev %s", Directory::Exists(Path("/dev")) ? "Exists!!":"Don't Exists");
+  LogFormat("ttymxc0 %s", File::Exists(Path("/dev/ttymxc0")) ? "Exists!!":"Don't Exists" );
+
+  LogFileVisitor lfv;
+
+
+  Directory::VisitSpecificFiles(Path("/dev/"),"tty*", lfv);
+
 
   // Creates the main window
 

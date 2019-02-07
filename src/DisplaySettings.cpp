@@ -1,6 +1,4 @@
-/*
-Copyright_License {
-
+/* Copyright_License {
   XCSoar Glide Computer - http://www.xcsoar.org/
   Copyright (C) 2000-2016 The XCSoar Project
   A detailed list of copyright holders can be found in the file "AUTHORS".
@@ -26,5 +24,6 @@ Copyright_License {
 void
 DisplaySettings::SetDefaults()
 {
-  orientation = DisplayOrientation::DEFAULT;
+//  orientation = DisplayOrientation::DEFAULT;
+  orientation = DisplayOrientation::LANDSCAPE;
 }

@@ -1067,6 +1067,20 @@ static constexpr MetaData meta_data[] = {
     UpdateInfoBoxNbrSat,
   },
 
+  {
+    N_("Sample Counter"),
+    N_("Counter"),
+    N_("A simple counter."),
+    UpdateInfoBoxCounter,
+  },
+
+  {
+    N_("Sample Random"),
+    N_("Random"),
+    N_("Show a random number"),
+    UpdateInfoBoxRandom,
+  },
+
 };
 
 static_assert(ARRAY_SIZE(meta_data) == NUM_TYPES,

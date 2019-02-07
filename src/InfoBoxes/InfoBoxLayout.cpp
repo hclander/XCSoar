@@ -26,7 +26,8 @@ Copyright_License {
 #include "Util/Macros.hpp"
 #include "Util/Clamp.hpp"
 
-static constexpr double CONTROLHEIGHTRATIO = 7.4;
+//static constexpr double CONTROLHEIGHTRATIO = 7.4;
+static constexpr double CONTROLHEIGHTRATIO = 6.4;
 
 /**
  * The number of info boxes in each geometry.
@@ -186,7 +187,7 @@ InfoBoxLayout::Calculate(PixelRect rc, InfoBoxSettings::Geometry geometry)
 
   case InfoBoxSettings::Geometry::TOP_LEFT_8:
   case InfoBoxSettings::Geometry::OBSOLETE_TOP_LEFT_8:
-    if (layout.landscape) {
+    if (layout.landscape && 0) {
       rc.left = MakeLeftColumn(layout, layout.positions, 4,
                                rc.left, rc.top, rc.bottom);
       rc.left = MakeLeftColumn(layout, layout.positions + 4, 4,

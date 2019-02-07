@@ -42,6 +42,8 @@ ScreenGlobalInit::ScreenGlobalInit()
 #ifdef KOBO
   Display::Rotate(DisplayOrientation::DEFAULT);
   event_queue->SetDisplayOrientation(DisplayOrientation::DEFAULT);
+//  Display::Rotate(DisplayOrientation::LANDSCAPE);
+//  event_queue->SetDisplayOrientation(DisplayOrientation::LANDSCAPE);
 #endif
 
   ScreenInitialized();
