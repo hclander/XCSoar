@@ -25,6 +25,7 @@ Copyright_License {
 #include "Border.hpp"
 #include "Util/Macros.hpp"
 #include "Util/Clamp.hpp"
+#include "Logger/Logger.hpp"
 
 //static constexpr double CONTROLHEIGHTRATIO = 7.4;
 static constexpr double CONTROLHEIGHTRATIO = 4.4;

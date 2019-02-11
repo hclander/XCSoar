@@ -209,6 +209,8 @@ Startup()
   Net::DownloadManager::Initialise();
 #endif
 
+  PixelSize screen_size = Display::GetSize(PixelSize(-1,-1));
+
   LogFormat("Display dpi=%u,%u", Display::GetXDPI(), Display::GetYDPI());
 
   LogFormat("/dev %s", Directory::Exists(Path("/dev")) ? "Exists!!":"Don't Exists");
