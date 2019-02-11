@@ -25,7 +25,7 @@ Copyright_License {
 #include "Border.hpp"
 #include "Util/Macros.hpp"
 #include "Util/Clamp.hpp"
-#include "Logger/Logger.hpp"
+#include "LogFile.hpp"
 
 //static constexpr double CONTROLHEIGHTRATIO = 7.4;
 static constexpr double CONTROLHEIGHTRATIO = 4.4;
@@ -118,6 +118,8 @@ InfoBoxLayout::Calculate(PixelRect rc, InfoBoxSettings::Geometry geometry)
 {
   const PixelSize screen_size = rc.GetSize();
 
+  LogFormat("Display size=%d,%d", screen_size.cx, screen_size.cy);
+
   geometry = ValidateGeometry(geometry, screen_size);
 
   Layout layout;
@@ -194,6 +196,9 @@ InfoBoxLayout::Calculate(PixelRect rc, InfoBoxSettings::Geometry geometry)
       rc.left = MakeLeftColumn(layout, layout.positions + 4, 4,
                                rc.left, rc.top, rc.bottom);
     } else {
+
+      LogFormat("rc (%d,%d,%d,%d)",rc.left,rc.top,rc.right,rc.bottom);
+
       rc.top = MakeTopRow(layout, layout.positions, 4,
                           rc.left, right, rc.top);
       rc.top = MakeTopRow(layout, layout.positions + 4, 4,

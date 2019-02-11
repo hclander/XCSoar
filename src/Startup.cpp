@@ -211,7 +211,7 @@ Startup()
 
   PixelSize screen_size = Display::GetSize(PixelSize(-1,-1));
 
-  LogFormat("Display dpi=%u,%u size=%u,%u", Display::GetXDPI(), Display::GetYDPI(), screen_size.cx, screen_size.cy);
+  LogFormat("Display dpi=%u,%u size=%d,%d", Display::GetXDPI(), Display::GetYDPI(), screen_size.cx, screen_size.cy);
 
   LogFormat("/dev %s", Directory::Exists(Path("/dev")) ? "Exists!!":"Don't Exists");
   LogFormat("ttymxc0 %s", File::Exists(Path("/dev/ttymxc0")) ? "Exists!!":"Don't Exists" );
