@@ -214,8 +214,8 @@ Startup()
   LogFormat("Display dpi=%u,%u size=%d,%d", Display::GetXDPI(), Display::GetYDPI(), screen_size.cx, screen_size.cy);
 
   LogFormat("/dev %s", Directory::Exists(Path("/dev")) ? "Exists!!":"Don't Exists");
-  LogFormat("null %s", File::Exists(Path("/dev/null")) ? "Exists!!":"Don't Exists" );
-  LogFormat("ttymxc0 %s", File::Exists(Path("/dev/ttymxc0")) ? "Exists!!":"Don't Exists" );
+  LogFormat("null %s", File::ExistsAny(Path("/dev/null")) ? "Exists!!":"Don't Exists" );
+  LogFormat("ttymxc0 %s", File::ExistsAny(Path("/dev/ttymxc0")) ? "Exists!!":"Don't Exists" );
 
   LogFileVisitor lfv;
 
