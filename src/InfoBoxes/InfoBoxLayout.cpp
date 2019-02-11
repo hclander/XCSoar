@@ -446,7 +446,7 @@ InfoBoxLayout::CalcInfoBoxSizes(Layout &layout, PixelSize screen_size,
   case InfoBoxSettings::Geometry::BOTTOM_RIGHT_12:
   case InfoBoxSettings::Geometry::TOP_LEFT_8:
   case InfoBoxSettings::Geometry::TOP_LEFT_12:
-    if (landscape) {
+    if (landscape && 0) {
       layout.control_size.cy = 2 * screen_size.cy / layout.count;    // screen_size.cy / layout.count / 2
       layout.control_size.cx = screen_size.cx / 3;
 
