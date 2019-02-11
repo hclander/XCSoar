@@ -448,7 +448,9 @@ InfoBoxLayout::CalcInfoBoxSizes(Layout &layout, PixelSize screen_size,
   case InfoBoxSettings::Geometry::TOP_LEFT_12:
     if (landscape && 0) {
       layout.control_size.cy = 2 * screen_size.cy / layout.count;    // screen_size.cy / layout.count / 2
-      layout.control_size.cx = screen_size.cx / 3;
+      //layout.control_size.cx = screen_size.cx  / 2;
+      //layout.control_size.cx = screen_size.cx  / 3;
+      layout.control_size.cx = (screen_size.cx - screen_size.cx / layout.count) / 2;
 
       LogFormat("Screen Size cx=%d, cy=%d)",screen_size.cx,screen_size.cy);
       LogFormat("Control Size cx=%d, cy=%d)",layout.control_size.cx,layout.control_size.cy);
@@ -458,7 +460,9 @@ InfoBoxLayout::CalcInfoBoxSizes(Layout &layout, PixelSize screen_size,
 */
     } else {
       layout.control_size.cx = 2 * screen_size.cx / layout.count;  // screen_size.cx / layout.count / 2
-      layout.control_size.cy =  screen_size.cy / 3 ;  // Realmente queremos  /2 pero quiero probar primero con /3
+      //layout.control_size.cy =  screen_size.cy / 2 ;
+      //layout.control_size.cy =  screen_size.cy / 3 ;  // Realmente queremos  /2 pero quiero probar primero con /3
+      layout.control_size.cy =  (screen_size.cy - screen_size.cy / layout.count) / 2;
 
       /*layout.control_size.cy = CalculateInfoBoxRowHeight(screen_size.cy,
                                                          layout.control_size.cx);*/
