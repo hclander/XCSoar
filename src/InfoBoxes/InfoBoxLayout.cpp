@@ -27,7 +27,7 @@ Copyright_License {
 #include "Util/Clamp.hpp"
 
 //static constexpr double CONTROLHEIGHTRATIO = 7.4;
-static constexpr double CONTROLHEIGHTRATIO = 6.4;
+static constexpr double CONTROLHEIGHTRATIO = 4.4;
 
 /**
  * The number of info boxes in each geometry.
@@ -447,8 +447,9 @@ InfoBoxLayout::CalcInfoBoxSizes(Layout &layout, PixelSize screen_size,
 */
     } else {
       layout.control_size.cx = 2 * screen_size.cx / layout.count;
-      layout.control_size.cy = CalculateInfoBoxRowHeight(screen_size.cy,
-                                                         layout.control_size.cx);
+      layout.control_size.cy = 2 * screen_size.cy / layout.count;
+      /*layout.control_size.cy = CalculateInfoBoxRowHeight(screen_size.cy,
+                                                         layout.control_size.cx);*/
     }
 
     break;
