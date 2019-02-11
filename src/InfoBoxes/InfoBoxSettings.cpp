@@ -58,7 +58,8 @@ InfoBoxSettings::SetDefaults()
 
   geometry = Geometry::TOP_LEFT_8;
 
-  inverse = false;
+//  inverse = false;
+  inverse = true;
   use_colors = true;
   border_style = BorderStyle::BOX;
 
