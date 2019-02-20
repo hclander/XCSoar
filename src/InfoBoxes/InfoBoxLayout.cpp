@@ -702,6 +702,8 @@ InfoBoxLayout::GetBorder(InfoBoxSettings::Geometry geometry, bool landscape,
     border |= BORDERLEFT;
     break;
 
+  case InfoBoxSettings::Geometry::ANUBE_LANDSCAPE:
+  case InfoBoxSettings::Geometry::ANUBE_PORTRAIT:
   case InfoBoxSettings::Geometry::OBSOLETE_SPLIT_8:
   case InfoBoxSettings::Geometry::OBSOLETE_TOP_LEFT_8:
   case InfoBoxSettings::Geometry::OBSOLETE_TOP_LEFT_4:
