@@ -136,6 +136,10 @@ InfoBoxLayout::Calculate(PixelRect rc, InfoBoxSettings::Geometry geometry)
   unsigned right = rc.right;
 
   switch (geometry) {
+  case InfoBoxSettings::Geometry::ANUBE_LANDSCAPE:
+  case InfoBoxSettings::Geometry::ANUBE_PORTRAIT:
+    break;
+
   case InfoBoxSettings::Geometry::SPLIT_8:
   case InfoBoxSettings::Geometry::OBSOLETE_SPLIT_8:
     if (layout.landscape) {
@@ -338,6 +342,8 @@ InfoBoxLayout::ValidateGeometry(InfoBoxSettings::Geometry geometry,
     /* landscape */
 
     switch (geometry) {
+    case InfoBoxSettings::Geometry::ANUBE_LANDSCAPE:
+    case InfoBoxSettings::Geometry::ANUBE_PORTRAIT:
     case InfoBoxSettings::Geometry::SPLIT_8:
     case InfoBoxSettings::Geometry::BOTTOM_RIGHT_8:
     case InfoBoxSettings::Geometry::TOP_LEFT_8:
@@ -374,6 +380,8 @@ InfoBoxLayout::ValidateGeometry(InfoBoxSettings::Geometry geometry,
     /* portrait */
 
     switch (geometry) {
+    case InfoBoxSettings::Geometry::ANUBE_LANDSCAPE:
+    case InfoBoxSettings::Geometry::ANUBE_PORTRAIT:
     case InfoBoxSettings::Geometry::SPLIT_8:
     case InfoBoxSettings::Geometry::BOTTOM_RIGHT_8:
     case InfoBoxSettings::Geometry::TOP_LEFT_8:
