@@ -75,6 +75,10 @@ Profile::Load(const ProfileMap &map, InfoBoxSettings &settings)
 
   /* migrate from XCSoar older than 6.7 */
   switch (settings.geometry) {
+
+  case InfoBoxSettings::Geometry::ANUBE_LANDSCAPE:
+  case InfoBoxSettings::Geometry::ANUBE_PORTRAIT:
+    break;
   case InfoBoxSettings::Geometry::SPLIT_8:
   case InfoBoxSettings::Geometry::BOTTOM_RIGHT_8:
   case InfoBoxSettings::Geometry::TOP_LEFT_8:
