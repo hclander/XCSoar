@@ -115,6 +115,10 @@ struct InfoBoxSettings {
     RIGHT_16 = 19,
     LEFT_12_RIGHT_3_VARIO = 20,
 
+    /** ANUBE SPECIAL **/
+    ANUBE_LANDSCAPE= 21,
+    ANUBE_PORTRAIT = 22,
+
   } geometry;
 
   bool inverse, use_colors;

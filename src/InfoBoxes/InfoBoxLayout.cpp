@@ -37,7 +37,7 @@ static constexpr unsigned char geometry_counts[] = {
   8, 8, 8, 8, 8, 8,
   9, 5, 12, 24, 12,
   12, 9, 8, 4, 4, 4, 4,
-  8, 16, 15,
+  8, 16, 15, 8, 8,
 };
 
 namespace InfoBoxLayout
@@ -441,6 +441,13 @@ InfoBoxLayout::CalcInfoBoxSizes(Layout &layout, PixelSize screen_size,
   const bool landscape = screen_size.cx > screen_size.cy;
 
   switch (geometry) {
+
+  case InfoBoxSettings::Geometry::ANUBE_LANDSCAPE:
+    break;
+
+  case InfoBoxSettings::Geometry::ANUBE_PORTRAIT:
+    break;
+
   case InfoBoxSettings::Geometry::SPLIT_8:
   case InfoBoxSettings::Geometry::BOTTOM_RIGHT_8:
   case InfoBoxSettings::Geometry::BOTTOM_RIGHT_12:
@@ -450,7 +457,10 @@ InfoBoxLayout::CalcInfoBoxSizes(Layout &layout, PixelSize screen_size,
       layout.control_size.cy = 2 * screen_size.cy / layout.count;    // screen_size.cy / layout.count / 2
       //layout.control_size.cx = screen_size.cx  / 2;
       //layout.control_size.cx = screen_size.cx  / 3;
-      layout.control_size.cx = (screen_size.cx - screen_size.cx / layout.count) / 2;
+
+      // XXX Es posible que pete
+      //layout.control_size.cx = (screen_size.cx - screen_size.cx / layout.count) / 2;
+      layout.control_size.cx = (screen_size.cx  / layout.count) / 2;
 
       LogFormat("Screen Size cx=%d, cy=%d)",screen_size.cx,screen_size.cy);
       LogFormat("Control Size cx=%d, cy=%d)",layout.control_size.cx,layout.control_size.cy);
@@ -462,7 +472,10 @@ InfoBoxLayout::CalcInfoBoxSizes(Layout &layout, PixelSize screen_size,
       layout.control_size.cx = 2 * screen_size.cx / layout.count;  // screen_size.cx / layout.count / 2
       //layout.control_size.cy =  screen_size.cy / 2 ;
       //layout.control_size.cy =  screen_size.cy / 3 ;  // Realmente queremos  /2 pero quiero probar primero con /3
-      layout.control_size.cy =  (screen_size.cy - screen_size.cy / layout.count) / 2;
+
+      // XXX Es posible que pete
+     // layout.control_size.cy =  (screen_size.cy - screen_size.cy / layout.count) / 2;
+      layout.control_size.cy =  (screen_size.cy  / layout.count) / 2;
 
       /*layout.control_size.cy = CalculateInfoBoxRowHeight(screen_size.cy,
                                                          layout.control_size.cx);*/
